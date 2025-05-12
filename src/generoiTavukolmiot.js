@@ -44,13 +44,20 @@ const tavut = [
   "keys", "bo", "kuus", "tö", "fi", "bi", "pä", "käys"
 ];
 
+function getTavujenMaara(tavut) {
+  return tavut.length;
+}
+const tavujenMaara = getTavujenMaara(tavut);
+
 function getTriangleKey(t1, t2, t3) {
   return [t1, t2, t3].sort().join('-');
 }
 
-function getKategoria(tavu, index) {
-  if (index < 100) return 1;
-  if (index < 130) return 2;
+function getKategoria(tavu, index, tavujenMaara) {
+  const raja1 = Math.floor(tavujenMaara * 0.5);  // 50 %
+  const raja2 = Math.floor(tavujenMaara * 0.8);  // 50 % + 30 %
+  if (index < raja1) return 1;
+  if (index < raja2) return 2;
   return 3;
 }
 
@@ -71,7 +78,7 @@ function getPiste(t1, t2, t3, kategoriat) {
 
 const tavukolmiot = (() => {
   const kategoriat = {};
-  tavut.forEach((tavu, i) => kategoriat[tavu] = getKategoria(tavu, i));
+  tavut.forEach((tavu, i) => kategoriat[tavu] = getKategoria(tavu, i, tavujenMaara ));
 
   const kolmioehdot = new Set();
   const kolmiot = [];
