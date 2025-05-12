@@ -118,7 +118,7 @@ useEffect(() => {
   if (showNameDialog && nameInputRef.current) {
     setTimeout(() => {
       nameInputRef.current?.focus();
-    }, 100); // 100 ms on hyvä lähtökohta
+    }, 500); // 100 ms on hyvä lähtökohta
   }
 }, [showNameDialog]);
 //
