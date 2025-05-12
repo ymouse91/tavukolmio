@@ -1,5 +1,5 @@
 // Täydellinen tavulista
-const tavut = [
+/*const tavut = [
   "ka","ti","ki","si","to","ta","ku","ko","li","ma",
   "pi","la","sa","pa","ri","ra","su","tu","va","taa",
   "tää","ni","mi","pu","na","ja","vi","te","kä","ke",
@@ -20,6 +20,28 @@ const tavut = [
   "vin","huu","kään","tie","tus","kei","ker","kur","lei","sää",
   "luu","pai","tuu","uu","ruo","sel","tar","val","vie","aa",
   "bo","haa","ah","kel","fi","los","sal","huo","rin","os","jää"
+];
+*/
+const tavut = [
+  "ka", "ta", "la", "li", "ri", "si", "ma", "ki", "va", "ku",
+  "ko", "sa", "to", "ra", "vi", "su", "ti", "pa", "tu", "na",
+  "ja", "ro", "mu", "pi", "te", "ha", "lo", "pu", "po", "ni",
+  "ho", "mi", "ru", "lu", "no", "ke", "ju", "jo", "a", "de",
+  "o", "so", "hi", "ve", "hu", "e", "le", "re", "kas", "pe",
+  "las", "taa", "kaa", "vii", "ne", "lii", "nu", "kal", "he", "me",
+  "ai", "kai", "kuu", "ras", "raa", "vas", "vo", "vaa", "luo", "pal",
+  "al", "tai", "kä", "kar", "tos", "kii", "suo", "laa", "sä", "i",
+  "kat", "var", "pis", "har", "vis", "nä", "vä", "kin", "kan", "vuo",
+  "pas", "tä", "vin", "kor", "kuo", "lie", "se", "mo", "laus", "pii",
+  "ky", "sii", "maa", "rä", "ten", "ruu", "ty", "mä", "hä", "saa",
+  "lin", "sy", "ly", "kau", "ker", "an", "din", "je", "rin", "di",
+  "sin", "saus", "tin", "kaus", "raus", "taus", "jaus", "paus", "rai", "vaus",
+  "puu", "tur", "huu", "vu", "os", "lai", "tuo", "ry", "py", "tar",
+  "vai", "jy", "haa", "da", "han", "tis", "naus", "kos", "maus", "nos",
+  "lei", "rus", "ruo", "kei", "kur", "suu", "muu", "aa", "ar", "luu",
+  "tää", "pö", "men", "ton", "sis", "kir", "sil", "sel", "sal", "paa",
+  "lä", "tuu", "tuus", "tus", "gi", "kö", "keus", "jä", "kis", "kää",
+  "keys", "bo", "kuus", "tö", "fi", "bi", "pä", "käys"
 ];
 
 function getTriangleKey(t1, t2, t3) {
