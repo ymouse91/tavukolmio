@@ -116,10 +116,11 @@ useEffect(() => {
   
   useEffect(() => {
   if (showNameDialog && nameInputRef.current) {
-    nameInputRef.current.focus();
+    setTimeout(() => {
+      nameInputRef.current?.focus();
+    }, 100); // 100 ms on hyvä lähtökohta
   }
 }, [showNameDialog]);
-
 //
 	  if (!show) return null; // Estää ennenaikaisen näkymisen
 
