@@ -1,39 +1,10 @@
 // Täydellinen TavukolmioPeliApp – sisältää pelilaudan, pisteet ja vuorot
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { wordList } from './wordList';
 import { tavukolmiot } from './generoiTavukolmiot';
 import './TavukolmioPeliApp.css'; // Lisätty tyylitiedosto
 
-/*
-// Esimerkki: TavukolmioPeliApp.css
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-}
-
-button {
-  background-color: #f9fafb;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 4px;
-  transition: background-color 0.2s ease;
-}
-
-button:hover {
-  background-color: #e0f2fe;
-}
-
-button.selected {
-  background-color: #dbeafe;
-  border-color: #60a5fa;
-}
-*/
 
 const startKey = '10,6';
 const [startQ, startR] = startKey.split(',').map(Number);
@@ -59,7 +30,8 @@ const trianglePoints = (x, y, orientation, side) => {
 
 const oppositeSide = { left: 'right', right: 'left', base: 'base' };
 
-export default function TavukolmioPeliApp() {
+export default function TavukolmioPeliApp({ show }) {
+
   const [löydetytSanat, setLöydetytSanat] = useState([]);
   const [näytäSanatDialog, setNäytäSanatDialog] = useState(false);
 
@@ -139,7 +111,7 @@ useEffect(() => {
     container.scrollTop = y - container.clientHeight / 2;
     setHasCenteredOnce(true); // merkkaa että keskitys tehtiin
   }
-}, [board, hasCenteredOnce]);
+}, [board, hasCenteredOnce, height]);
 
   
   useEffect(() => {
@@ -148,6 +120,9 @@ useEffect(() => {
   }
 }, [showNameDialog]);
 
+//
+	  if (!show) return null; // Estää ennenaikaisen näkymisen
+
   const handlePlayerInput = () => {
     if (tempName.trim() === '') {
       if (playerNames.length > 0) {
@@ -155,12 +130,7 @@ useEffect(() => {
         setShowHandDialog(true);
         setPlayers(playerNames);
         setScores(Array(playerNames.length).fill(0));
-		/*
-        const newHands = Array(playerNames.length).fill().map(() => generateHand());
-        setHands(newHands);
-        const triangle = getRandomTriangle(usedTriangles.current, true);
-        setBoard({ [startKey]: { ...triangle, orientation: 'down', justPlaced: true } });
-		*/
+
       }
     } else {
       setPlayerNames([...playerNames, tempName.trim()]);
@@ -241,8 +211,8 @@ useEffect(() => {
       setScores(newScores);
       setLastMove({ word: bestWords.join(', '), earned: bestTotal, total: newScores[currentPlayer], player: currentPlayer, position: bestMatch.position });
 
-      const everyoneOut = newHands.every(h => h.length === 0);
-      if (everyoneOut) {
+    const everyoneOut = newHands.every(h => h.length === 0);
+     /* if (everyoneOut) {
         if (handsLeft > 1) {
           const remainingTriangles = tavukolmiot.length - usedTriangles.current.size;
           const trianglesNeeded = players.length * 6;
@@ -279,6 +249,24 @@ useEffect(() => {
           setGameOver(true);
         }
       }
+*/
+if (everyoneOut) {
+  if (handsLeft > 1) {
+    const remainingTriangles = tavukolmiot.length - usedTriangles.current.size;
+    const trianglesNeeded = players.length * 6;
+
+    if (remainingTriangles >= trianglesNeeded) {
+      setHands(Array(players.length).fill().map(() => generateHand()));
+      setHandsLeft(handsLeft - 1);
+      setShowNewHandDialog(true);
+      setPassesInARow(0);
+    } else {
+      setShowTriangleLimitDialog(true);
+    }
+  } else {
+    setGameOver(true);
+  }
+}
 
       setCurrentPlayer((currentPlayer + 1) % players.length);
     }
@@ -392,7 +380,7 @@ useEffect(() => {
                   <polygon points={points} fill={fill} stroke={stroke} strokeWidth={isMatched ? 3 : 1} />
                   {tri && (
                     <>
-                      <text x={x + side * 0.32} y={y + height * 0.55} textAnchor="middle" fontSize="16" fontWeight="bold">{tavut[0]}</text>
+                      <text x={x + side * 0.34} y={y + height * 0.55} textAnchor="middle" fontSize="16" fontWeight="bold">{tavut[0]}</text>
                       <text x={x + side * 0.66} y={y + height * 0.55} textAnchor="middle" fontSize="16" fontWeight="bold">{tavut[1]}</text>
                       <text x={x + side / 2} y={orientation === 'up' ? y + height * 0.9 : y + height * 0.15} textAnchor="middle" fontSize="16" fontWeight="bold">{tavut[2]}</text>
                       <text x={x + side / 2} y={orientation === 'up' ? y + height * 0.75 : y + height * 0.4} textAnchor="middle" fontSize="24" fontWeight="bold" fill="#000" stroke="#000" strokeWidth="0.5">{tri.pisteet}</text>

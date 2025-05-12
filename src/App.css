@@ -79,3 +79,6 @@ body {
 .triangle {
   cursor: pointer;
 }
+.App {
+  text-align: center;
+}
