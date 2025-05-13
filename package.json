@@ -2,7 +2,7 @@
   "name": "tavukolmio-peli",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://ymouse91.github.io/tavukolmio-peli",
+  "homepage": "https://ymouse91.github.io/tavukolmio",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@testing-library/dom": "^10.4.0",
