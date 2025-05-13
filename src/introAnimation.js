@@ -38,7 +38,7 @@ export default function IntroAnimation({ onDone }) {
     function draw(time) {
       const elapsed = (time - startTime) / 1000;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const lift = Math.min(elapsed, 3) * -10;
+      const lift = 0 //= Math.min(elapsed, 3) * -10;
 
       if (elapsed < 1) {
         const r = 5 + Math.sin(elapsed * 4 * Math.PI) * 2;
