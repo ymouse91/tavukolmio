@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tavukolmio-peli/static/css/main.db804b7b.css",
-    "main.js": "/tavukolmio-peli/static/js/main.91089aca.js",
-    "static/js/453.6336793f.chunk.js": "/tavukolmio-peli/static/js/453.6336793f.chunk.js",
-    "index.html": "/tavukolmio-peli/index.html",
-    "main.db804b7b.css.map": "/tavukolmio-peli/static/css/main.db804b7b.css.map",
-    "main.91089aca.js.map": "/tavukolmio-peli/static/js/main.91089aca.js.map",
-    "453.6336793f.chunk.js.map": "/tavukolmio-peli/static/js/453.6336793f.chunk.js.map"
+    "main.css": "/tavukolmio/static/css/main.db804b7b.css",
+    "main.js": "/tavukolmio/static/js/main.7401a6eb.js",
+    "static/js/453.6336793f.chunk.js": "/tavukolmio/static/js/453.6336793f.chunk.js",
+    "index.html": "/tavukolmio/index.html",
+    "main.db804b7b.css.map": "/tavukolmio/static/css/main.db804b7b.css.map",
+    "main.7401a6eb.js.map": "/tavukolmio/static/js/main.7401a6eb.js.map",
+    "453.6336793f.chunk.js.map": "/tavukolmio/static/js/453.6336793f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.db804b7b.css",
-    "static/js/main.91089aca.js"
+    "static/js/main.7401a6eb.js"
   ]
 }
