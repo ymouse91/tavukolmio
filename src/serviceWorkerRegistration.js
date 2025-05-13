@@ -30,11 +30,17 @@ function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
+      console.log('Service worker registered:', registration);
+
+      // 🔧 Päivitys pyydetään heti
+      registration.update();
+
+      // 🔧 Jos uusi SW on valmiina odottamassa, otetaan se heti käyttöön
       if (registration.waiting) {
-        if (config && config.onUpdate) {
-          config.onUpdate(registration);
-        }
+        console.log('Service worker waiting – sending SKIP_WAITING');
+        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
       }
+
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
@@ -59,6 +65,7 @@ function registerValidSW(swUrl, config) {
       console.error('Error during service worker registration:', error);
     });
 }
+
 
 function checkValidServiceWorker(swUrl, config) {
   fetch(swUrl)
