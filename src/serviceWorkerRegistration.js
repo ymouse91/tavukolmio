@@ -93,3 +93,14 @@ export function unregister() {
       });
   }
 }
+// serviceWorkerRegistration.js
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/tavukolmio-peli/service-worker.js')
+    .then(reg => {
+      reg.update(); // Tämä yrittää hakea uutta versiota heti
+      if (reg.waiting) {
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+    })
+    .catch(err => console.error('SW registration failed:', err));
+}
