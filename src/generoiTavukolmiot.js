@@ -41,7 +41,7 @@ const tavut = [
   "lei", "rus", "ruo", "kei", "kur", "suu", "muu", "aa", "ar", "luu",
   "tää", "pö", "men", "ton", "sis", "kir", "sil", "sel", "sal", "paa",
   "lä", "tuu", "tuus", "tus", "gi", "kö", "keus", "jä", "kis", "kää",
-  "keys", "bo", "kuus", "tö", "fi", "bi", "pä", "käys"
+  "keys", "kuus", "tö", "pä", "käys","ah", "au", "jy"
 ];
 
 function getTavujenMaara(tavut) {
