@@ -50,6 +50,7 @@ export default function IntroAnimation({ onDone }) {
 
       if (elapsed >= 1) {
 ctx.lineWidth = 8;
+ctx.lineCap = 'round';
 for (let i = 0; i < 3; i++) {
   if (elapsed >= 1 + (i * 0.33)) {
     const a = points[i];
