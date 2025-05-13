@@ -8,18 +8,17 @@ export default function IntroAnimation({ onDone }) {
 
   useEffect(() => {
     
-	if (startedRef.current) return;
+    if (startedRef.current) return;
     startedRef.current = true;
 
-	
-	const canvas = canvasRef.current;
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
     const center = { x: 250, y: 250 };
     const radius = 130;
     const startTime = performance.now();
 	
-	const sideColors = ['#60a5fa', '#f87171', '#facc15']; // vasen, oikea, kanta
+    const sideColors = ['#60a5fa', '#f87171', '#facc15']; // vasen, oikea, kanta
     const tavuColors = { kol: '#60a5fa', mi: '#f87171', o: '#facc15' };
 
 
@@ -38,7 +37,8 @@ export default function IntroAnimation({ onDone }) {
     function draw(time) {
       const elapsed = (time - startTime) / 1000;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const lift = 0 ;//Math.min(elapsed, 3) * -10;
+      const lift = 0; 
+	    //Math.min(elapsed, 3) * -10;
 
       if (elapsed < 1) {
         const r = 5 + Math.sin(elapsed * 4 * Math.PI) * 2;
