@@ -18,6 +18,10 @@ export default function IntroAnimation({ onDone }) {
     const center = { x: 250, y: 250 };
     const radius = 130;
     const startTime = performance.now();
+	
+	const sideColors = ['#60a5fa', '#f87171', '#facc15']; // vasen, oikea, kanta
+    const tavuColors = { kol: '#60a5fa', mi: '#f87171', o: '#facc15' };
+
 
     const points = [
       { x: center.x, y: center.y - radius },
@@ -45,18 +49,20 @@ export default function IntroAnimation({ onDone }) {
       }
 
       if (elapsed >= 1) {
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 2;
-        for (let i = 0; i < 3; i++) {
-          if (elapsed >= 1 + (i * 0.33)) {
-            const a = points[i];
-            const b = points[(i + 1) % 3];
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y + lift);
-            ctx.lineTo(b.x, b.y + lift);
-            ctx.stroke();
-          }
-        }
+ctx.lineWidth = 8;
+for (let i = 0; i < 3; i++) {
+  if (elapsed >= 1 + (i * 0.33)) {
+    const a = points[i];
+    const b = points[(i + 1) % 3];
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y + lift);
+    ctx.lineTo(b.x, b.y + lift);
+    ctx.strokeStyle = sideColors[i];
+    ctx.stroke();
+  }
+}
+
+
       }
 
       if (elapsed >= 2) {
@@ -81,7 +87,7 @@ export default function IntroAnimation({ onDone }) {
     offsetX = -20;
   }
 
-
+  ctx.fillStyle = tavuColors[t.text]; // asetetaan väri tavuittain
  ctx.fillText(t.text.toUpperCase(), t.x + offsetX, t.y + lift + offsetY);
  
 });
@@ -96,6 +102,7 @@ export default function IntroAnimation({ onDone }) {
 
   const bounce = Math.sin((elapsed - 2.5) * Math.PI * 2) * 10;
   ctx.font = 'bold 36px "Comic Neue", sans-serif';
+  ctx.fillStyle = '#000'; // aina musta väri numerolle
   ctx.fillText(score.toString(), center.x -5 , center.y + 10 + bounce + lift);
 }
 
