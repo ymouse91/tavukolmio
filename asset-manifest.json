@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tavukolmio-peli/static/css/main.db804b7b.css",
-    "main.js": "/tavukolmio-peli/static/js/main.db1d96bf.js",
+    "main.js": "/tavukolmio-peli/static/js/main.26ae1321.js",
     "static/js/453.6336793f.chunk.js": "/tavukolmio-peli/static/js/453.6336793f.chunk.js",
     "index.html": "/tavukolmio-peli/index.html",
     "main.db804b7b.css.map": "/tavukolmio-peli/static/css/main.db804b7b.css.map",
-    "main.db1d96bf.js.map": "/tavukolmio-peli/static/js/main.db1d96bf.js.map",
+    "main.26ae1321.js.map": "/tavukolmio-peli/static/js/main.26ae1321.js.map",
     "453.6336793f.chunk.js.map": "/tavukolmio-peli/static/js/453.6336793f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.db804b7b.css",
-    "static/js/main.db1d96bf.js"
+    "static/js/main.26ae1321.js"
   ]
 }
