@@ -318,7 +318,7 @@ if (everyoneOut) {
       ) : null}
 
      {!showNameDialog && !showHandDialog && !gameOver && players.length > 0 && (
-        <div className="top-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="top-bar" style={{ backgroundColor: '#ccf7cc', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span>
         Pisteet: {players.map((p, i) => `${p.toUpperCase()} ${scores[i]}`).join(' | ')}
        </span>
