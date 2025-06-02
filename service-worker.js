@@ -1,11 +1,18 @@
 const CACHE_NAME = 'tavukolmio-cache-v1';
 const FILES_TO_CACHE = [
-  './',
-  './index.html',
-  './manifest.json',
-  './logo-192.png',
-  './logo-512.png',
-  './favicon.ico'
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/logo-192.png',
+  '/logo-512.png',
+  '/favicon.ico',
+  '/static/css/main.d8f800cf.css',
+  '/static/css/main.d8f800cf.css.map',
+  '/static/js/453.6336793f.chunk.js',
+  '/static/js/453.6336793f.chunk.js.map',
+  '/static/js/main.2a2c43d9.js',
+  '/static/js/main.2a2c43d9.js.LICENSE.txt',
+  '/static/js/main.2a2c43d9.js.map'
 ];
 
 // Asennusvaihe – cachetetaan resurssit
