@@ -213,44 +213,7 @@ useEffect(() => {
       setLastMove({ word: bestWords.join(', '), earned: bestTotal, total: newScores[currentPlayer], player: currentPlayer, position: bestMatch.position });
 
     const everyoneOut = newHands.every(h => h.length === 0);
-     /* if (everyoneOut) {
-        if (handsLeft > 1) {
-          const remainingTriangles = tavukolmiot.length - usedTriangles.current.size;
-          const trianglesNeeded = players.length * 6;
-          if (remainingTriangles >= trianglesNeeded) {
-            const remainingTriangles = tavukolmiot.length - usedTriangles.current.size;
-            const trianglesNeeded = players.length * 6;
-            if (remainingTriangles >= trianglesNeeded) {
-              const remainingTriangles = tavukolmiot.length - usedTriangles.current.size;
-            const trianglesNeeded = players.length * 6;
-            if (remainingTriangles >= trianglesNeeded) {
-              setHands(Array(players.length).fill().map(() => generateHand()));
-              setHandsLeft(handsLeft - 1);
-              setShowNewHandDialog(true);
-              setPassesInARow(0);
-              return;
-            } else {
-              setShowTriangleLimitDialog(true);
-              return;
-            }
-              setShowNewHandDialog(true);
-              setPassesInARow(0);
-              return;
-            } else {
-              setShowTriangleLimitDialog(true);
-              return;
-            }
-            setShowNewHandDialog(true);
-            return;
-          } else {
-            setShowTriangleLimitDialog(true);
-            return;
-          }
-        } else {
-          setGameOver(true);
-        }
-      }
-*/
+   
 if (everyoneOut) {
   if (handsLeft > 1) {
     const remainingTriangles = tavukolmiot.length - usedTriangles.current.size;
@@ -347,7 +310,7 @@ if (everyoneOut) {
       {näytäSanatDialog && (
         <div className="dialog">
           <h2>Löydetyt sanat</h2>
-          <div style={{ maxHeight: '300px', overflowY: 'auto', textAlign: 'left' }}>
+          <div style={{ maxHeight: '300px', overflowY: 'auto', textAlign: 'left',  paddingLeft: '7rem'}}>
             {löydetytSanat.map((sana, i) => (
               <div key={i}>{sana}</div>
             ))}

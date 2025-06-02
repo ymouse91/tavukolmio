@@ -4,7 +4,8 @@ const FILES_TO_CACHE = [
   './index.html',
   './manifest.json',
   './logo-192.png',
-  './logo-512.png'
+  './logo-512.png',
+  './favicon.ico'
 ];
 
 // Asennusvaihe – cachetetaan resurssit

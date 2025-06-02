@@ -26,10 +26,6 @@ body {
   margin-left: 20px;
 }
 
-.move-bar {
-  background-color: #bbf7d0;
-  padding: 8px 10px;
-}
 
 .player-hand {
   display: flex;
