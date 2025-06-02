@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tavukolmio/static/css/main.db804b7b.css",
-    "main.js": "/tavukolmio/static/js/main.1a255728.js",
+    "main.css": "/tavukolmio/static/css/main.d8f800cf.css",
+    "main.js": "/tavukolmio/static/js/main.2a2c43d9.js",
     "static/js/453.6336793f.chunk.js": "/tavukolmio/static/js/453.6336793f.chunk.js",
     "index.html": "/tavukolmio/index.html",
-    "main.db804b7b.css.map": "/tavukolmio/static/css/main.db804b7b.css.map",
-    "main.1a255728.js.map": "/tavukolmio/static/js/main.1a255728.js.map",
+    "main.d8f800cf.css.map": "/tavukolmio/static/css/main.d8f800cf.css.map",
+    "main.2a2c43d9.js.map": "/tavukolmio/static/js/main.2a2c43d9.js.map",
     "453.6336793f.chunk.js.map": "/tavukolmio/static/js/453.6336793f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db804b7b.css",
-    "static/js/main.1a255728.js"
+    "static/css/main.d8f800cf.css",
+    "static/js/main.2a2c43d9.js"
   ]
 }
